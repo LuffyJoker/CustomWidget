@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_FFFFFF"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/dimen_18"
+    android:paddingTop="@dimen/dimen_18">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dimen_12"
+        android:text="收费项目"
+        android:layout_weight="1"
+        android:textColor="@color/color_1E1E1E"
+        android:textSize="@dimen/dimen_16" />
+
+    <EditText
+        android:background="@null"
+        android:id="@+id/tv_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:imeActionLabel="完成"
+        android:gravity="right|center_vertical"
+        android:text="静脉注射【1122】"
+        android:textColor="@color/color_1E1E1E"
+        android:textSize="@dimen/dimen_16" />
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="@dimen/dimen_10"
+        android:paddingRight="@dimen/dimen_12"
+        android:scaleType="centerInside"
+        android:src="@mipmap/icon_list_right" />
+</LinearLayout>

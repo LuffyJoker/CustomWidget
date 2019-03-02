@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="1px"
+    android:background="@drawable/tab_center_selector_bg"
+    android:button="@null"
+    android:paddingBottom="@dimen/dimen_7"
+    android:paddingLeft="@dimen/dimen_11"
+    android:paddingRight="@dimen/dimen_11"
+    android:paddingTop="@dimen/dimen_7"
+    android:text="24小时"
+    android:textColor="@drawable/font_selector_bg_for_tabs"
+    android:textSize="@dimen/font_size_16_sp"/>

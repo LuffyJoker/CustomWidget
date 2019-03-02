@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top"
+        android:background="?attr/colorPrimary"
+        android:textColor="@color/color_FFFFFF"
+        android:theme="@style/AppTheme"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/color_FFFFFF">
+
+        <RelativeLayout
+            android:id="@+id/custom_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--左边部分-->
+            <LinearLayout
+                android:id="@+id/left_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dimen_12">
+
+                <ImageView
+                    android:id="@+id/left_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/icon_arrows_left" />
+
+                <TextView
+                    android:id="@+id/left_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dimen_50"
+                    android:paddingLeft="@dimen/dimen_5"
+                    android:text="返回"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/font_size_16_sp"
+                    tools:text="返回" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/left_parent">
+
+                <ImageView
+                    android:id="@+id/left_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_12"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_launcher_round"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/left_nurse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dimen_50"
+                    android:paddingLeft="@dimen/font_size_5_sp"
+                    android:text="标题"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/font_size_16_sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!--中间部分-->
+            <FrameLayout
+                android:id="@+id/center_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <Spinner
+                    android:id="@+id/center_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/font_size_18_sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/center_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dimen_5"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="@dimen/font_size_18_sp"
+                    tools:text="中间标题" />
+
+            </FrameLayout>
+
+
+            <!--右边部分-->
+            <FrameLayout
+                android:id="@+id/right_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true">
+
+                <LinearLayout
+                    android:id="@+id/right_inside_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right|center_vertical"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingRight="@dimen/dimen_12"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/right_inside_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="我关注/全部"
+                        android:textColor="@color/color_FFFFFF"
+                        android:textSize="@dimen/font_size_18_sp" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/right_inside_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:switchMinWidth="@dimen/dimen_60" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/right_tv_sub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dimen_12"
+                        android:paddingRight="@dimen/dimen_12"
+                        android:textColor="@color/color_FFFFFF"
+                        android:textSize="@dimen/font_size_16_sp"
+                        tools:text="更多2" />
+
+                    <TextView
+                        android:id="@+id/right_tv_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:paddingRight="@dimen/dimen_12"
+                        android:textColor="@color/color_FFFFFF"
+                        android:textSize="@dimen/font_size_16_sp"
+                        tools:text="更多1" />
+                </LinearLayout>
+
+            </FrameLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>

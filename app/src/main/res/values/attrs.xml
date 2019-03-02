@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--字段配置ItemView-->
+    <declare-styleable name="ConfigItemView">
+        <attr name="configName" />
+        <attr name="configNameColor" />
+        <attr name="configValueColor" />
+        <attr name="configValueHint" format="reference|string" />
+        <attr name="configValue" format="reference|string" />
+        <attr name="rightDrawable" format="reference" />
+    </declare-styleable>
+
+    <!-- 加减配置 ItemView -->
+    <declare-styleable name="ConfigItemViewForNumber">
+        <attr name="configName" />
+        <attr name="configNameColor" />
+        <attr name="configValueColor" />
+        <attr name="configNumberValue" format="float" />
+        <attr name="configValueStep" format="float" />
+        <attr name="configMinValue" format="float" />
+        <attr name="configMaxValue" format="float" />
+    </declare-styleable>
+
+    <!-- 自定义 ToorBar  -->
+    <declare-styleable name="CustomToolBar">
+        <attr name="leftIcon" format="reference" />
+        <attr name="leftText" format="reference|string" />
+        <attr name="centerText" format="reference|string" />
+        <attr name="rightText" format="reference|string" />
+        <attr name="rightSubText" format="reference|string" />
+        <attr name="rightIcon" format="reference" />
+        <attr name="rightSubIcon" format="reference" />
+        <attr name="titleTextSize" format="reference|float" />
+        <attr name="titleTextColor" />
+        <attr name="pressAlpha" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="TabsView">
+        <attr name="tabs" format="reference" />
+        <attr name="itemMinWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="NotifiCationItemView">
+        <attr name="notificationName" format="reference|string" />
+        <attr name="notificationNameColor" format="color" />
+        <attr name="notificationContent" format="reference|string" />
+        <attr name="notificationContentColor" format="color" />
+        <attr name="notificationDate" format="reference|string" />
+        <attr name="notificationDateColor" format="color" />
+        <attr name="is_new" format="boolean" />
+        <attr name="iconDrawable" format="reference" />
+    </declare-styleable>
+
+</resources>
