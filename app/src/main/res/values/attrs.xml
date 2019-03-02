@@ -52,4 +52,30 @@
         <attr name="iconDrawable" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="LoopView">
+        <attr name="centerLineColor" />
+        <attr name="topBottomTextColor" format="color" />
+        <attr name="centerTextColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="canLoop" format="boolean" />
+        <attr name="initPosition" format="integer" />
+        <attr name="drawItemCount" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="DatePickerView">
+        <attr name="centerLineColor"/>
+        <attr name="textTips" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomTheme">
+        <attr name="gifMovieViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="GifMovieView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+
+    <style name="Widget.GifMovieView" parent="@android:style/Widget"></style>
+
 </resources>
