@@ -12,13 +12,12 @@ import android.view.View;
 import com.peng.customwidget.R;
 
 /**
- * create by Mr.Q on 2019/3/2.
+ * create by Mr.Q on 2019/3/7.
  * 类介绍：
- *      1、用于显示 Gif 图，有暂停，播放功能
- *      2、只能缩小，不能方法，最大只能达到 Gif 的帧大小
+ *      1、可以随意设置大小的，用于显示 Gif 图的 View
+ *      2、有暂停，播放功能
  */
-public class GifView extends View {
-
+public class GifViewAdaptSize extends View {
     private static final int DEFAULT_MOVIEW_DURATION = 1000;
 
     private int mMovieResourceId;
@@ -34,9 +33,16 @@ public class GifView extends View {
     private float mTop;
 
     /**
-     * 缩放因子，为了使动画在 View 内显示
+     * 水平缩放因子
      */
-    private float mScale;
+    private float mWidthScale;
+
+
+    /**
+     * 垂直缩放因子
+     */
+    private float mHeightScale;
+
 
     /**
      * GIF 帧的宽高
@@ -46,16 +52,22 @@ public class GifView extends View {
 
     private volatile boolean mPaused = false;
     private boolean mVisible = true;
+    private int measureModeWidth;
+    private int measureWidth;
+    private int measureModeHeight;
+    private int measureHeight;
+    private int movieWidth;
+    private int movieHeight;
 
-    public GifView(Context context) {
+    public GifViewAdaptSize(Context context) {
         this(context, null);
     }
 
-    public GifView(Context context, AttributeSet attrs) {
+    public GifViewAdaptSize(Context context, AttributeSet attrs) {
         this(context, attrs, R.styleable.CustomTheme_gifMovieViewStyle);
     }
 
-    public GifView(Context context, AttributeSet attrs, int defStyle) {
+    public GifViewAdaptSize(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         setViewAttributes(context, attrs, defStyle);
@@ -123,41 +135,46 @@ public class GifView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
         if (mMovie != null) {
-            int movieWidth = mMovie.width();
-            int movieHeight = mMovie.height();
+            movieWidth = mMovie.width();
+            movieHeight = mMovie.height();
             /**
              * 计算水平缩放
              */
-            float scaleH = 1f;
-            int measureModeWidth = MeasureSpec.getMode(widthMeasureSpec);
+            measureModeWidth = MeasureSpec.getMode(widthMeasureSpec);
 
             if (measureModeWidth != MeasureSpec.UNSPECIFIED) {
-                int maximumWidth = MeasureSpec.getSize(widthMeasureSpec);
-                if (movieWidth > maximumWidth) {
-                    scaleH = (float) movieWidth / (float) maximumWidth;
+                measureWidth = MeasureSpec.getSize(widthMeasureSpec);
+                if (movieWidth > measureWidth) {
+                    mWidthScale = (float) movieWidth / (float) measureWidth;
+                } else {
+                    mWidthScale = (float) measureWidth / (float) movieWidth;
                 }
             }
 
             /**
              * 计算垂直缩放
              */
-            float scaleW = 1f;
-            int measureModeHeight = MeasureSpec.getMode(heightMeasureSpec);
+            measureModeHeight = MeasureSpec.getMode(heightMeasureSpec);
 
             if (measureModeHeight != MeasureSpec.UNSPECIFIED) {
-                int maximumHeight = MeasureSpec.getSize(heightMeasureSpec);
-                if (movieHeight > maximumHeight) {
-                    scaleW = (float) movieHeight / (float) maximumHeight;
+                measureHeight = MeasureSpec.getSize(heightMeasureSpec);
+                if (movieHeight > measureHeight) {
+                    mHeightScale = (float) movieHeight / (float) measureHeight;
+                } else {
+                    mHeightScale = (float) measureHeight / (float) movieHeight;
                 }
             }
 
-            /**
-             * 计算整体缩放
-             */
-            mScale = 1f / Math.max(scaleH, scaleW);
-
-            mMeasuredMovieWidth = (int) (movieWidth * mScale);
-            mMeasuredMovieHeight = (int) (movieHeight * mScale);
+            if (movieWidth > measureWidth) {
+                mMeasuredMovieWidth = (int) (movieWidth / mWidthScale);
+            } else {
+                mMeasuredMovieWidth = (int) (movieWidth * mWidthScale);
+            }
+            if (movieHeight > measureHeight) {
+                mMeasuredMovieHeight = (int) (movieHeight / mHeightScale);
+            } else {
+                mMeasuredMovieHeight = (int) (movieHeight * mHeightScale);
+            }
 
             setMeasuredDimension(mMeasuredMovieWidth, mMeasuredMovieHeight);
 
@@ -230,13 +247,29 @@ public class GifView extends View {
 
     /**
      * 绘制当前动画的 GIF 帧
+     *
      * @param canvas
      */
     private void drawMovieFrame(Canvas canvas) {
+        float widthScale = 0;
+        float heightScale = 0;
         mMovie.setTime(mCurrentAnimationTime);
         canvas.save();
-        canvas.scale(mScale, mScale);
-        mMovie.draw(canvas, mLeft / mScale, mTop / mScale);
+
+        if (movieWidth > measureWidth) {
+            widthScale = 1 / mWidthScale;
+        } else {
+            widthScale = mWidthScale;
+        }
+
+        if (movieHeight > measureHeight) {
+            heightScale = 1 / mHeightScale;
+        } else {
+            heightScale = mHeightScale;
+        }
+
+        canvas.scale(widthScale, heightScale);
+        mMovie.draw(canvas, mLeft / widthScale, mTop / heightScale);
         canvas.restore();
     }
 
@@ -263,4 +296,5 @@ public class GifView extends View {
         invalidateView();
     }
 }
+
 

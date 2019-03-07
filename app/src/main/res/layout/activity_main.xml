@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
     <com.peng.customwidget.custom_view.GifView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:gif="@drawable/gif_listen" />
+        android:layout_width="@dimen/dimen_200"
+        android:layout_height="@dimen/dimen_80"
+        app:gif="@drawable/gif_listen"
+        android:background="#123"
+        />
 
 </LinearLayout>
