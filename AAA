@@ -1,5 +1,5 @@
- fpid=str(fp & 0x7fffffffffffffffL)
-fp2 = file('H:/message_log.txt', 'a')
+fpid = str(fp & 0x7fffffffffffffff)
+fp2 = open('/app/message_log.txt', 'a')
 s = message.encode('ascii', 'ignore').decode('ascii')
 fp2.write('message=' + s + ', id=' + fpid + "\r\n")
 fp2.close()
