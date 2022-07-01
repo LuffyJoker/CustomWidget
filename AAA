@@ -5,7 +5,6 @@ fp2.write('message=' + s + ', id=' + fpid + "\r\n")
 fp2.close()
 
 
-英文
 Search or enter URL
 Privacy Statistics
 Block ads
@@ -37,8 +36,8 @@ Search bookmarks
 Finish
 History
 Delete history
-
-Once all historical visits are deleted there is no way to restore them
+"
+Once all historical visits are deleted there is no way to restore them"
 Cancel
 Copy
 Search reading lists
@@ -50,8 +49,7 @@ No read list yet
 Whether to close all tabs
 Closing all tabs will not restore
 You have entered private browsing mode
-"Broearn will not save tabbed browsing history in private mode
-records and cookies, but new bookmarks, reading lists, and downloaded files will be preserved."
+Broearn will not save tabbed browsing history in private mode records and cookies,but new bookmarks,reading lists,and downloaded files will be preserved.
 Web page translation completed
 Translate from xxx to xxx
 Show original web page
@@ -63,7 +61,7 @@ Search download history
 Expired
 Reverse election
 Delete record
-The local file of this content has expired, whether to delete it
+The local file of this content has expired,whether to delete it
 Confirm deletion
 Delete downloads
 xx download records will be deleted. After the downloaded files are deleted, they cannot be recovered. Do you want to confirm?
@@ -74,9 +72,9 @@ Share to
 Open with a third-party app
 Set Broearn as default browser
 Browser lock
-Use TOUCH ID, FACE ID or system password
+Use TOUCH ID,FACE ID or system password
 App settings
-Settings for wallets, tasks, ads, etc.
+Settings for wallets,tasks,ads,etc.
 Synchronize
 Search engine
 System themes
