@@ -3,3 +3,110 @@ fp2 = open('/app/message_log.txt', 'a')
 s = message.encode('ascii', 'ignore').decode('ascii')
 fp2.write('message=' + s + ', id=' + fpid + "\r\n")
 fp2.close()
+
+
+英文
+Search or enter URL
+Privacy Statistics
+Block ads
+intercept tracking
+Save traffic
+Save time
+Bookmark
+Downloads
+Reading list
+Desktop site
+Mobile site
+Share
+Add bookmark
+Edit bookmarks
+Add reading list
+Translate
+Wallet
+Settings
+Mobile device bookmarks
+Bookmark bar
+Other bookmarks
+Managed bookmarks
+Edit
+Delete
+New folder
+New tab opens
+New privacy tab opens
+Search bookmarks
+Finish
+History
+Delete history
+
+Once all historical visits are deleted there is no way to restore them
+Cancel
+Copy
+Search reading lists
+Unread
+Have read
+Set as read
+No unread list yet
+No read list yet
+Whether to close all tabs
+Closing all tabs will not restore
+You have entered private browsing mode
+"Broearn will not save tabbed browsing history in private mode
+records and cookies, but new bookmarks, reading lists, and downloaded files will be preserved."
+Web page translation completed
+Translate from xxx to xxx
+Show original web page
+Original language
+Translate to
+Actively ask whether to translate xxx content
+Download record
+Search download history
+Expired
+Reverse election
+Delete record
+The local file of this content has expired, whether to delete it
+Confirm deletion
+Delete downloads
+xx download records will be deleted. After the downloaded files are deleted, they cannot be recovered. Do you want to confirm?
+Failed to share
+Share success
+Unshare
+Share to
+Open with a third-party app
+Set Broearn as default browser
+Browser lock
+Use TOUCH ID, FACE ID or system password
+App settings
+Settings for wallets, tasks, ads, etc.
+Synchronize
+Search engine
+System themes
+Full screen
+Understand the difference between full screen and classic screen
+Dark mode
+Light mode
+Follow the system
+Language and Translation
+Broearn System Language
+Content translated into this language
+Add language
+Search
+Clear browser data
+Time limit
+Last hour
+Last 24 hours
+Last 7 days
+Last 4 weeks
+Unlimited time
+Search history
+Web browsing history
+Cache file
+Downloaded file
+Privacy and security protection
+Common problem
+Feedback
+New version
+About Broearn
+About us
+End User License Agreement
+Privacy Policy
+Terms of use
